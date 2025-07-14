@@ -1,0 +1,35 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+env/
+
+# VS Code settings
+.vscode/
+
+# Pytest coverage reports
+htmlcov/
+.coverage
+
+# Test output
+*.log
+
+# IDE files
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python egg files
+dist/
+build/
+*.egg-info/
+
+# Misc
+*.swp
+*.bak
