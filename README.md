@@ -39,7 +39,7 @@ Behind the scenes each step is implemented as a small, single-responsibility met
 discount_service/
 ├── discount_service.py        # Core business logic
 ├── models.py                  # Data models supplied by assignment
-├── fake_data.py               # Dummy data for the “happy path” scenario
+├── fake_data.py               # Dummy data for testing
 ├── tests/
 │   ├── test_unit_discount_service.py      # Unit tests (individual methods)
 │   └── test_integration_discount_service.py # End-to-end happy path
