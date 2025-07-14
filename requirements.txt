@@ -1,0 +1,4 @@
+# Test dependencies only (service itself uses stdlib only)
+pytest>=8.0
+pytest-asyncio>=1.0 
+pytest-cov>=4.0
