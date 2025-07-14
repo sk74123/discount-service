@@ -8,7 +8,7 @@ Scenario:
 
 from datetime import datetime
 from decimal import Decimal
-from models import Product, CartItem, CustomerProfile, PaymentInfo, BrandTier
+from discount_service.models import Product, CartItem, CustomerProfile, PaymentInfo, BrandTier
 
 
 # Products
@@ -82,4 +82,4 @@ upi_payment = PaymentInfo(
     method="UPI",
     bank_name=None,
     card_type=None
-) 
+)

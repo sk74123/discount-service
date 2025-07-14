@@ -1,6 +1,6 @@
 from decimal import Decimal
 from typing import List, Optional, Dict
-from models import CartItem, CustomerProfile, PaymentInfo, DiscountedPrice
+from discount_service.models import CartItem, CustomerProfile, PaymentInfo, DiscountedPrice
 
 
 # Simple configuration for discount rules

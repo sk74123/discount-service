@@ -4,12 +4,12 @@ Unit tests for the individual discount calculation methods in DiscountService.
 
 import pytest
 from decimal import Decimal
-from discount_service import DiscountService
-from fake_data import (
+from discount_service.discount_service import DiscountService
+from discount_service.fake_data import (
     regular_customer, icici_card, puma_tshirt, nike_shoes, adidas_jeans,
     premium_customer, upi_payment
 )
-from models import CartItem, Product, BrandTier
+from discount_service.models import CartItem, Product, BrandTier
 
 
 # --- Unit Tests for Individual Discount Methods ---
@@ -124,4 +124,4 @@ def test_build_discounted_price_response(service):
 
     # Test case 3: When final price would go below zero
     response = service._build_discounted_price_response(Decimal('100'), {"Big Discount": Decimal('120')})
-    assert response.final_price == Decimal('0') 
+    assert response.final_price == Decimal('0')

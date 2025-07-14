@@ -5,8 +5,8 @@ Tests the main scenario with PUMA T-shirt, category discount, and ICICI bank off
 
 import asyncio
 import pytest
-from discount_service import DiscountService
-from fake_data import cart_items_scenario_1, regular_customer, icici_card
+from discount_service.discount_service import DiscountService
+from discount_service.fake_data import cart_items_scenario_1, regular_customer, icici_card
 
 
 @pytest.mark.asyncio
@@ -33,7 +33,9 @@ async def test_discount_scenario():
     assert "Extra 10% off on T-shirts" in result.applied_discounts
     assert "ICICI - 10% instant discount" in result.applied_discounts
     assert result.final_price < result.original_price
-    assert result.message == ""
+    assert "You saved" in result.message
+    assert "Min 40% off on PUMA" in result.message
+    assert "ICICI - 10% instant discount" in result.message
 
     # Test voucher code validation
     is_valid = await service.validate_discount_code("SUPER69", cart_items_scenario_1, regular_customer)
@@ -50,7 +52,7 @@ async def test_discount_scenario():
         voucher_code="SUPER69"
     )
     assert result_with_voucher.final_price < result.final_price
-    assert "Super Sale Voucher" in result_with_voucher.applied_discounts
+    assert "Voucher SUPER69" in result_with_voucher.applied_discounts
     assert result_with_voucher.original_price == result.original_price
     assert result_with_voucher.final_price <= result.final_price
 
